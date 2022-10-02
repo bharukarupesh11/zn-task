@@ -1,6 +1,7 @@
 # zn-task
 
 #Steps to create the backend project:
+	
 	1. Create a black directory or folder
 	2. Use “npm init --yes” command to create a package.json file inside the directory.
 	3. Install all your dependencies using “npm install dependency_name” command.
@@ -11,6 +12,7 @@
 
 
 #Steps to run the backend project with MongoDB:
+
 	1. Install the MongoDB Compass in your computer.
 	2. Provide the database connection url in the .env file. 
 	3. Create “products” directory at the root of the project. 
@@ -21,8 +23,9 @@
 
 
 #Steps to run the backend project with MySql:
-You can use the below commands to run the REST API code,
-	nodemon app.js    OR      node app.js
+
+You can use "nodemon app.js" OR "node app.js" command to run the backend code.
+	
 	
 	Note: You need to do following things in order to run the backend code successfully,
 		1. Create a schema in mysql with “products_listing_app” name.
