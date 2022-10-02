@@ -1,5 +1,11 @@
 # zn-task
 
+#Steps to run UI:
+	
+	1. First install all the dependencies using "npm install" command
+	2. Run the project using "ng serve" command.
+
+
 #Steps to create the backend project:
 	
 	1. Create a black directory or folder
