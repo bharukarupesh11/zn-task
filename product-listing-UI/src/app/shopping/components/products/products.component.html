@@ -1,0 +1,62 @@
+<div class="container g-0">
+  <div class="row g-0 mt-2 justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-success" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+
+<div class="container g-0 mt-5">
+  <div class="row g-0 justify-content-end">
+    <div class="col-auto mt-1 fw-bold">Select Category</div>
+    <div class="col-auto me-2 ms-4">
+      <div class="dropdown show">
+        <a
+          class="btn border dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Select Product Category
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" (click)="resetProducts()">All</a>
+          <ng-container *ngFor="let category of categories; let i = index">
+            <a class="dropdown-item" (click)="filterProducts(category)">{{
+              category.name
+            }}</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-2 mb-2">
+  <div class="row border">
+    <div class="col m-1" *ngFor="let prod of filteredProducts; let i = index">
+      <div class="card mb-3 mt-3">
+        <div class="product-1 align-items-center p-2 text-center">
+          <div class="image-container border-bottom mb-2">
+            <img
+              class="xyz rounded"
+              src="../../../../assets/laptop.jpg"
+              width="200"
+            />
+          </div>
+          <h5>{{ prod.title }}</h5>
+          <div class="mt-3 info">
+            <span class="text1 d-block">{{ prod.description }}</span>
+          </div>
+        </div>
+        <div class="p-3 bg-primary text-center text-white mt-3 cursor">
+          <span role="button">Know More</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

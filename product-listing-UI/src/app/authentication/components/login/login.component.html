@@ -1,0 +1,54 @@
+<div class="form-container">
+  <main class="form-login">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <h1 class="h4 mb-4 fw-bold">Products Listing App</h1>
+
+      <div class="form-group form-floating">
+        <input
+          type="text"
+          formControlName="username"
+          class="form-control"
+          id="username"
+          placeholder="Username"
+        />
+        <label for="username">Username</label>
+      </div>
+
+      <br />
+
+      <div class="form-group form-floating">
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          id="password"
+          placeholder="Password"
+        />
+        <label for="password">Password</label>
+      </div>
+
+      <br />
+
+      <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
+
+      <br /><br />
+
+      <div style="text-align: center">
+        <a
+          href="#"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Create new account"
+        >
+          Create an account
+        </a>
+      </div>
+
+      <div *ngIf="errorMsg" class="alert alert-danger mt-3 mb-0">
+        {{ errorMsg }}
+      </div>
+
+      <p class="mt-5 mb-3 text-muted">&copy; Products Listing App</p>
+    </form>
+  </main>
+</div>
