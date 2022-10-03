@@ -58,7 +58,13 @@ router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
 // GET PRODUCT: Everybody can see the products. So this will be a public API(No authentication and no authorization).
 router.get("/find/:id", async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    // const product = await Product.findById(req.params.id);
+    const product = await Product.find({ _id: req.params.id }).populate(
+      "category"
+    );
+
+    console.log(product);
+
     res.send(product);
   } catch (error) {
     console.log("Error: ", error);
