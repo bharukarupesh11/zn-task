@@ -36,6 +36,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('currentUser');
-    this._router.navigate(['account/login']); // navigates to the login page after logging out.
+    this._router.navigate(['login']); // navigates to the login page after logging out.
   }
 }

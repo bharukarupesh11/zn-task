@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { EncryptionDecryptionService } from 'src/app/authentication/services/encryption-decryption.service';
 import { User } from 'src/app/shared/models/user';
 import { environment } from 'src/environments/environment';
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',

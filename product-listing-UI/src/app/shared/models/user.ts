@@ -3,6 +3,6 @@ export interface User {
   username: string;
   email: string;
   password: string;
-  isAdmin: boolean;
-  accessToken: string;
+  isAdmin?: boolean;
+  accessToken?: string;
 }

@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
     console.log('Current User Obj : ', currentUserObj);
 
     if (!currentUserObj) {
-      this._router.navigate(['account/login']);
+      // this._router.navigate(['account/login']);
+      this._router.navigate(['login']);
     } else {
       this._router.navigate(['products']);
     }
