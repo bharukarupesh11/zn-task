@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit {
   categories: Category[] = [];
   products: Product[] = [];
   filteredProducts: Product[] = [];
+  categoryName: string;
 
   constructor(
     private _productService: ProductsService,
@@ -42,11 +43,13 @@ export class ProductsComponent implements OnInit {
   }
 
   resetProducts() {
+    this.categoryName = 'All';
     this.filteredProducts = this.products;
   }
 
   filterProducts(category: Category) {
-    console.log('Category: ', category);
+    this.categoryName = category.name;
+
     this.filteredProducts = this.products.filter((product) => {
       return product.category._id === category._id;
     });
