@@ -53,8 +53,12 @@
             <span class="text1 d-block">{{ prod.description }}</span>
           </div>
         </div>
-        <div class="p-3 bg-primary text-center text-white mt-3 cursor">
-          <span role="button">Know More</span>
+        <div class="p-3 bg-primary text-center mt-3 cursor">
+          <a
+            [routerLink]="['/products/details/', prod._id]"
+            class="product-details"
+            >Know More</a
+          >
         </div>
       </div>
     </div>

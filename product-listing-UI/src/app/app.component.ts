@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
 
     if (!currentUserObj) {
       this._router.navigate(['account/login']);
-    } //else {
-    //   this._router.navigate(['products']);
-    // }
+    } else {
+      this._router.navigate(['products']);
+    }
   }
 }

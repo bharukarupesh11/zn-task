@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { EncryptionDecryptionService } from 'src/app/authentication/services/encryption-decryption.service';
 import { User } from 'src/app/shared/models/user';
 import { environment } from 'src/environments/environment';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -27,5 +28,27 @@ export class ProductsService {
     return this._httpClient.get(`${environment.apiUrl}/api/products/`, {
       headers,
     });
+  }
+
+  // GET PRODUCT BY ID
+  get(productId: string | null) {
+    let value = localStorage.getItem('currentUser');
+    let currentUser = value
+      ? (JSON.parse(this._encDecService.decrypt(value)) as User)
+      : null;
+
+    const headers = {
+      'x-auth-token': currentUser ? currentUser.accessToken : '',
+    };
+
+    return this._httpClient
+      .get(`${environment.apiUrl}/api/products/find/${productId}`, {
+        headers,
+      })
+      .pipe(
+        map((product) => {
+          return product;
+        })
+      );
   }
 }

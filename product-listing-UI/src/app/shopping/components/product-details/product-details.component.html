@@ -1,0 +1,36 @@
+<!-- <div class="container g-0 text-center border">
+  <h5>Product Details</h5>
+</div> -->
+<div class="product-details-container">
+  <div class="row border">
+    <div class="col text-center border-bottom">
+      <h5>Product Details</h5>
+    </div>
+
+    <div class="row product-details">
+      <div class="col-3 ms-5 mt-5">
+        <img src="../../../../assets/laptop.jpg" class="img-thumbnail" alt="" />
+      </div>
+      <div class="col ms-3 mt-5">
+        <div class="mt-3" style="width: 18rem">
+          <ng-container *ngIf="product.length">
+            <div class="card-body">
+              <h5>Product: {{ product[0].title }}</h5>
+              <span class="fw-bold">Category:</span>
+              {{ product[0].category.name }}
+
+              <br />
+
+              <span class="fw-bold">Description:</span>
+              {{ product[0].description }}
+
+              <br />
+              <span class="fw-bold">Price: </span>
+              {{ product[0].price }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
